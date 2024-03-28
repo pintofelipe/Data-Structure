@@ -24,8 +24,9 @@ public final class Scenarios extends javax.swing.JFrame {
 
         jbMatriz = new javax.swing.JButton();
         jbEscenariosMasVisitados = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jlTitle = new javax.swing.JLabel();
         jbDiaMasVisitado = new javax.swing.JButton();
+        jbEscenarioMenosVisitado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,14 +44,21 @@ public final class Scenarios extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 102, 255));
-        jLabel1.setText("Escenarios Visitados en Ocaña");
+        jlTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jlTitle.setForeground(new java.awt.Color(153, 102, 255));
+        jlTitle.setText("Escenarios Visitados en Ocaña");
 
         jbDiaMasVisitado.setText("Dia más visitado");
         jbDiaMasVisitado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbDiaMasVisitadoActionPerformed(evt);
+            }
+        });
+
+        jbEscenarioMenosVisitado.setText("Escenario menos visitado");
+        jbEscenarioMenosVisitado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEscenarioMenosVisitadoActionPerformed(evt);
             }
         });
 
@@ -62,21 +70,24 @@ public final class Scenarios extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(197, 197, 197)
-                        .addComponent(jLabel1))
+                        .addComponent(jlTitle))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
-                        .addGap(115, 115, 115)
-                        .addComponent(jbMatriz)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jbEscenarioMenosVisitado, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
+                                .addGap(115, 115, 115)
+                                .addComponent(jbMatriz)))))
                 .addContainerGap(219, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addComponent(jlTitle)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -86,7 +97,9 @@ public final class Scenarios extends javax.swing.JFrame {
                         .addComponent(jbEscenariosMasVisitados)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbDiaMasVisitado)
-                .addContainerGap(336, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jbEscenarioMenosVisitado)
+                .addContainerGap(301, Short.MAX_VALUE))
         );
 
         pack();
@@ -150,6 +163,38 @@ public final class Scenarios extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbDiaMasVisitadoActionPerformed
 
+    private void jbEscenarioMenosVisitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEscenarioMenosVisitadoActionPerformed
+        
+       int escenarioMenosVisitado = 0;
+       int minVisitado = Integer.MAX_VALUE;
+       
+       for(int i=0; i<4;i++){
+           
+           List<Integer> escenario = datos.get(i);
+           int totalDeVisitas =0;
+           
+           for(int visitas: escenario){
+               totalDeVisitas+=visitas;
+           }
+           
+           if(totalDeVisitas<minVisitado){
+               minVisitado = totalDeVisitas;
+               
+               escenarioMenosVisitado =i;
+           }
+           
+           
+           
+           
+       }
+       
+
+        JOptionPane.showMessageDialog(null, "El escenario menos visitado es "+nombresEscenarios[escenarioMenosVisitado]);
+   
+        
+        
+    }//GEN-LAST:event_jbEscenarioMenosVisitadoActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -192,9 +237,10 @@ public final class Scenarios extends javax.swing.JFrame {
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jbDiaMasVisitado;
+    private javax.swing.JButton jbEscenarioMenosVisitado;
     private javax.swing.JButton jbEscenariosMasVisitados;
     private javax.swing.JButton jbMatriz;
+    private javax.swing.JLabel jlTitle;
     // End of variables declaration//GEN-END:variables
 }
