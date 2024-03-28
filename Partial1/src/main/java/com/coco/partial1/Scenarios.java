@@ -27,6 +27,7 @@ public final class Scenarios extends javax.swing.JFrame {
         jlTitle = new javax.swing.JLabel();
         jbDiaMasVisitado = new javax.swing.JButton();
         jbEscenarioMenosVisitado = new javax.swing.JButton();
+        jbTotalDePersonas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,6 +63,13 @@ public final class Scenarios extends javax.swing.JFrame {
             }
         });
 
+        jbTotalDePersonas.setText("Total de personas ");
+        jbTotalDePersonas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbTotalDePersonasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,7 +88,8 @@ public final class Scenarios extends javax.swing.JFrame {
                                     .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
                                 .addGap(115, 115, 115)
-                                .addComponent(jbMatriz)))))
+                                .addComponent(jbMatriz))
+                            .addComponent(jbTotalDePersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(219, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -99,7 +108,9 @@ public final class Scenarios extends javax.swing.JFrame {
                 .addComponent(jbDiaMasVisitado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbEscenarioMenosVisitado)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jbTotalDePersonas)
+                .addContainerGap(266, Short.MAX_VALUE))
         );
 
         pack();
@@ -195,6 +206,21 @@ public final class Scenarios extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jbEscenarioMenosVisitadoActionPerformed
 
+    private void jbTotalDePersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbTotalDePersonasActionPerformed
+        int totalDePersonas = 0;
+        
+        for(List<Integer> personas: datos){ // Recorre cada fila es decir para cada Escenario
+            for(int person: personas){
+                totalDePersonas+=person;
+            }
+        }
+        
+        
+        JOptionPane.showMessageDialog(null, "El 4.	Total, de personas que visitan todos los escenarios durante la semana es de "+totalDePersonas);
+        
+        
+    }//GEN-LAST:event_jbTotalDePersonasActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -241,6 +267,7 @@ public final class Scenarios extends javax.swing.JFrame {
     private javax.swing.JButton jbEscenarioMenosVisitado;
     private javax.swing.JButton jbEscenariosMasVisitados;
     private javax.swing.JButton jbMatriz;
+    private javax.swing.JButton jbTotalDePersonas;
     private javax.swing.JLabel jlTitle;
     // End of variables declaration//GEN-END:variables
 }

@@ -41,6 +41,7 @@
                               <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                               <Component id="jbMatriz" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jbTotalDePersonas" min="-2" pref="187" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -67,7 +68,9 @@
               <Component id="jbDiaMasVisitado" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jbEscenarioMenosVisitado" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="301" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jbTotalDePersonas" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="266" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -114,6 +117,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbEscenarioMenosVisitadoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbTotalDePersonas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total de personas "/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbTotalDePersonasActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
