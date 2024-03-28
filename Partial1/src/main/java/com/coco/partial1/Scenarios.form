@@ -31,8 +31,11 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="jbEscenariosMasVisitados" min="-2" pref="163" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jbDiaMasVisitado" max="32767" attributes="0"/>
+                          <Component id="jbEscenariosMasVisitados" pref="187" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                       <Component id="jbMatriz" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -55,7 +58,9 @@
                       <Component id="jbEscenariosMasVisitados" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="371" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jbDiaMasVisitado" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="336" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -87,6 +92,14 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Escenarios Visitados en Oca&#xf1;a"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbDiaMasVisitado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dia m&#xe1;s visitado"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbDiaMasVisitadoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

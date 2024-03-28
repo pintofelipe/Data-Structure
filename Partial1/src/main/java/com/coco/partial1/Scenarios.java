@@ -1,4 +1,3 @@
-
 package com.coco.partial1;
 
 import java.util.List;
@@ -10,14 +9,10 @@ public final class Scenarios extends javax.swing.JFrame {
     /**
      * Creates new form Scenarios
      */
-
-
     List<List<Integer>> datos = new ArrayList<>();
     String[] nombresEscenarios = {"Mini pista patinaje", "Piscina olímpica", "Estadio", "Parque infantil"};
-    
-    
-    
-    
+    String[] diasSemana = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
+
     public Scenarios() {
         llenarMatrizEscenarios();
         initComponents();
@@ -30,6 +25,7 @@ public final class Scenarios extends javax.swing.JFrame {
         jbMatriz = new javax.swing.JButton();
         jbEscenariosMasVisitados = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jbDiaMasVisitado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,6 +47,13 @@ public final class Scenarios extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(153, 102, 255));
         jLabel1.setText("Escenarios Visitados en Ocaña");
 
+        jbDiaMasVisitado.setText("Dia más visitado");
+        jbDiaMasVisitado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbDiaMasVisitadoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,8 +65,10 @@ public final class Scenarios extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
-                        .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(139, 139, 139)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
+                        .addGap(115, 115, 115)
                         .addComponent(jbMatriz)))
                 .addContainerGap(219, Short.MAX_VALUE))
         );
@@ -79,7 +84,9 @@ public final class Scenarios extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(jbEscenariosMasVisitados)))
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jbDiaMasVisitado)
+                .addContainerGap(336, Short.MAX_VALUE))
         );
 
         pack();
@@ -90,86 +97,103 @@ public final class Scenarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jbMatrizActionPerformed
 
     private void jbEscenariosMasVisitadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEscenariosMasVisitadosActionPerformed
-        
-        int filaMasVisitada =0;
-        int maxVisitas =0;
-        
-        for(int i=0; i<datos.size();i++){
+
+        int filaMasVisitada = 0;
+        int maxVisitas = 0;
+
+        for (int i = 0; i < datos.size(); i++) {
             List<Integer> fila = datos.get(i); // obtiene una fila la primera Va ha ir comparando
-            
-            
+
             int totalDeVisitas = 0;
-            
-            for (int visitas: fila) {
-                totalDeVisitas+=visitas;
+
+            for (int visitas : fila) {
+                totalDeVisitas += visitas;
             }
-            
-            
-            
-            if(totalDeVisitas>maxVisitas){
+
+            if (totalDeVisitas > maxVisitas) {
                 maxVisitas = totalDeVisitas;
                 filaMasVisitada = i;
             }
+
+        }
+
+        String escenarioMasVisitado = nombresEscenarios[filaMasVisitada];
+
+        JOptionPane.showMessageDialog(null, "El escenario más visitado durante la semana es " + escenarioMasVisitado);
+
+
+    }//GEN-LAST:event_jbEscenariosMasVisitadosActionPerformed
+
+    private void jbDiaMasVisitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDiaMasVisitadoActionPerformed
+
+        int diaMasVisitado = 0;
+        int maxVisitas = 0;
+
+        for (int dia = 0; dia < 7; dia++) {
+
+            int totalVisitasDia =0;
+            for (List<Integer> fila : datos) {
+                totalVisitasDia+= fila.get(dia);
+            }
+            
+            if(totalVisitasDia>maxVisitas){
+                maxVisitas = totalVisitasDia;
+                
+                diaMasVisitado = dia;
+            }
+            
             
         }
         
- 
-        String escenarioMasVisitado = nombresEscenarios[filaMasVisitada];
-        
-        JOptionPane.showMessageDialog(null, "El escenario más visitado durante la semana es "+escenarioMasVisitado);
-        
-        
-    }//GEN-LAST:event_jbEscenariosMasVisitadosActionPerformed
+        JOptionPane.showMessageDialog(null, "El dia más visitado es el dia "+diasSemana[diaMasVisitado]);
+
+
+    }//GEN-LAST:event_jbDiaMasVisitadoActionPerformed
 
     public static void main(String args[]) {
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Scenarios().setVisible(true);
             }
         });
-        
-          
+
     }
 
-    public void llenarMatrizEscenarios(){
-        
+    public void llenarMatrizEscenarios() {
+
         // Agregar los datos a la matriz utilizando bucles for
         int[][] valores = {
-            {40, 78, 34, 23, 45, 23, 34},   // Mini pista patinaje
-            {23, 45, 67, 45, 46, 34, 56},   // Piscina olímpica
-            {54, 23, 43, 12, 23, 56, 66},   // Estadio
-            {54, 26, 48, 19, 21, 23, 56}    // Parque infantil
+            {40, 78, 34, 23, 45, 23, 34}, // Mini pista patinaje
+            {23, 45, 67, 45, 46, 34, 56}, // Piscina olímpica
+            {54, 23, 43, 12, 23, 56, 66}, // Estadio
+            {54, 26, 48, 19, 21, 23, 56} // Parque infantil
         };
-        
+
         for (int i = 0; i < 4; i++) {
             List<Integer> fila = new ArrayList<>();
-            
+
             for (int j = 0; j < 7; j++) {
                 fila.add(valores[i][j]);
             }
-            
+
             datos.add(fila);
         }
-        
-   
-        
+
     }
-    
-    
-    
-    public void mostrarMatriz(List<List<Integer>> datos){
-        
+
+    public void mostrarMatriz(List<List<Integer>> datos) {
 
         for (List<Integer> fila : datos) {
             for (Integer valor : fila) {
                 System.out.print(valor + "\t");
             }
-            System.out.println(); 
+            System.out.println();
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jbDiaMasVisitado;
     private javax.swing.JButton jbEscenariosMasVisitados;
     private javax.swing.JButton jbMatriz;
     // End of variables declaration//GEN-END:variables
