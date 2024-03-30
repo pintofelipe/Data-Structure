@@ -33,16 +33,17 @@
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jbEscenarioMenosVisitado" min="-2" pref="187" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jbDiaMasVisitado" max="32767" attributes="0"/>
-                                  <Component id="jbEscenariosMasVisitados" pref="187" max="32767" attributes="0"/>
+                          <Component id="jbTotalDePersonas" min="-2" pref="187" max="-2" attributes="0"/>
+                          <Component id="jbPromedioDeVisitas" min="-2" pref="187" max="-2" attributes="0"/>
+                          <Component id="jbDiaMasVisitado" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jbDiaMasVisitadoEstadio" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jbEscenariosMasVisitados" alignment="0" pref="187" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                               <Component id="jbMatriz" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jbTotalDePersonas" min="-2" pref="187" max="-2" attributes="0"/>
-                          <Component id="jbPromedioDeVisitas" min="-2" pref="187" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -65,15 +66,17 @@
                       <Component id="jbEscenariosMasVisitados" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jbDiaMasVisitado" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="jbDiaMasVisitadoEstadio" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jbEscenarioMenosVisitado" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jbTotalDePersonas" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jbPromedioDeVisitas" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="231" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jbDiaMasVisitado" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="190" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -136,6 +139,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbPromedioDeVisitasActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbDiaMasVisitadoEstadio">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dia m&#xe1;s visitado el estadio"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbDiaMasVisitadoEstadioActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -29,6 +29,7 @@ public final class Scenarios extends javax.swing.JFrame {
         jbEscenarioMenosVisitado = new javax.swing.JButton();
         jbTotalDePersonas = new javax.swing.JButton();
         jbPromedioDeVisitas = new javax.swing.JButton();
+        jbDiaMasVisitadoEstadio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,6 +79,13 @@ public final class Scenarios extends javax.swing.JFrame {
             }
         });
 
+        jbDiaMasVisitadoEstadio.setText("Dia más visitado el estadio");
+        jbDiaMasVisitadoEstadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbDiaMasVisitadoEstadioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,14 +99,15 @@ public final class Scenarios extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jbEscenarioMenosVisitado, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
-                                .addGap(115, 115, 115)
-                                .addComponent(jbMatriz))
                             .addComponent(jbTotalDePersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbPromedioDeVisitas, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jbPromedioDeVisitas, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jbDiaMasVisitadoEstadio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
+                                .addGap(115, 115, 115)
+                                .addComponent(jbMatriz)))))
                 .addContainerGap(219, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -113,15 +122,17 @@ public final class Scenarios extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(jbEscenariosMasVisitados)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbDiaMasVisitado)
+                .addGap(12, 12, 12)
+                .addComponent(jbDiaMasVisitadoEstadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbEscenarioMenosVisitado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbTotalDePersonas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbPromedioDeVisitas)
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jbDiaMasVisitado)
+                .addContainerGap(190, Short.MAX_VALUE))
         );
 
         pack();
@@ -224,6 +235,30 @@ public final class Scenarios extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "El promedio de visitas a las semana es de "+promedio+" personas");
     }//GEN-LAST:event_jbPromedioDeVisitasActionPerformed
 
+    private void jbDiaMasVisitadoEstadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDiaMasVisitadoEstadioActionPerformed
+        
+        int diaMasVisitado =0;
+        int maxVisitas =0;
+        
+        
+        for (int i = 0; i < 7; i++) {
+            
+            int visitantesDia = datos.get(2).get(i);
+            
+            if(visitantesDia>maxVisitas){
+                maxVisitas = visitantesDia;
+                diaMasVisitado = i;
+            }
+            
+            
+        }
+        
+        
+        JOptionPane.showMessageDialog(null, "El dia más visitado en el estadio es el dia "+diasSemana[diaMasVisitado]);
+        
+        
+    }//GEN-LAST:event_jbDiaMasVisitadoEstadioActionPerformed
+
     public int contarTotalPersonas() {
         int totalDePersonas = 0;
 
@@ -279,6 +314,7 @@ public final class Scenarios extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jbDiaMasVisitado;
+    private javax.swing.JButton jbDiaMasVisitadoEstadio;
     private javax.swing.JButton jbEscenarioMenosVisitado;
     private javax.swing.JButton jbEscenariosMasVisitados;
     private javax.swing.JButton jbMatriz;
