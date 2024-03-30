@@ -51,7 +51,7 @@ public final class Scenarios extends javax.swing.JFrame {
         jlTitle.setForeground(new java.awt.Color(153, 102, 255));
         jlTitle.setText("Escenarios Visitados en Ocaña");
 
-        jbDiaMasVisitado.setText("Dia más visitado");
+        jbDiaMasVisitado.setText("Dia más  y menos visitado");
         jbDiaMasVisitado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbDiaMasVisitadoActionPerformed(evt);
@@ -174,13 +174,23 @@ public final class Scenarios extends javax.swing.JFrame {
 
         int diaMasVisitado = 0;
         int maxVisitas = 0;
-
+        int diaMenosVisitado =0;
+        int minVisitas =Integer.MAX_VALUE;
+        
+        
         for (int dia = 0; dia < 7; dia++) {
 
             int totalVisitasDia = 0;
             for (List<Integer> fila : datos) {
                 totalVisitasDia += fila.get(dia);
             }
+            
+            if(totalVisitasDia<minVisitas){
+                minVisitas = totalVisitasDia;
+                diaMenosVisitado = dia;
+            }
+            
+            
 
             if (totalVisitasDia > maxVisitas) {
                 maxVisitas = totalVisitasDia;
@@ -191,6 +201,8 @@ public final class Scenarios extends javax.swing.JFrame {
         }
 
         JOptionPane.showMessageDialog(null, "El dia más visitado es el dia " + diasSemana[diaMasVisitado]);
+        
+        JOptionPane.showMessageDialog(null, "El dia menos visitado es el dia " + diasSemana[diaMenosVisitado]);
 
 
     }//GEN-LAST:event_jbDiaMasVisitadoActionPerformed
