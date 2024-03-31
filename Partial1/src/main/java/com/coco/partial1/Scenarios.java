@@ -30,6 +30,7 @@ public final class Scenarios extends javax.swing.JFrame {
         jbTotalDePersonas = new javax.swing.JButton();
         jbPromedioDeVisitas = new javax.swing.JButton();
         jbDiaMasVisitadoEstadio = new javax.swing.JButton();
+        jBEscenarioMasYMenosVisitadoDia = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,6 +87,13 @@ public final class Scenarios extends javax.swing.JFrame {
             }
         });
 
+        jBEscenarioMasYMenosVisitadoDia.setText("Dia de la semana y escenario + y - visitado");
+        jBEscenarioMasYMenosVisitadoDia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEscenarioMasYMenosVisitadoDiaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,17 +105,17 @@ public final class Scenarios extends javax.swing.JFrame {
                         .addComponent(jlTitle))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbEscenarioMenosVisitado, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbTotalDePersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbPromedioDeVisitas, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jbDiaMasVisitadoEstadio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
-                                .addGap(115, 115, 115)
-                                .addComponent(jbMatriz)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jbDiaMasVisitadoEstadio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbEscenarioMenosVisitado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbTotalDePersonas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbPromedioDeVisitas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jBEscenarioMasYMenosVisitadoDia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(55, 55, 55)
+                        .addComponent(jbMatriz)))
                 .addContainerGap(219, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -130,9 +138,11 @@ public final class Scenarios extends javax.swing.JFrame {
                 .addComponent(jbTotalDePersonas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbPromedioDeVisitas)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addComponent(jbDiaMasVisitado)
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jBEscenarioMasYMenosVisitadoDia)
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         pack();
@@ -271,6 +281,52 @@ public final class Scenarios extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jbDiaMasVisitadoEstadioActionPerformed
 
+    private void jBEscenarioMasYMenosVisitadoDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEscenarioMasYMenosVisitadoDiaActionPerformed
+       
+        int escenarioMasVisitado =0;
+        int diaMasVisitado = 0;
+        int maxDia =0;
+        
+        int diaMenosVisitado = Integer.MAX_VALUE;
+        int escenarioMenosVisitado =0;
+        int minDia =0;
+        
+        
+        for (int dia= 0; dia < 7; dia++) {
+            
+            int visitasDia =0;
+            
+            for (int escenario = 0; escenario < 4; escenario++) {
+                
+                visitasDia = datos.get(escenario).get(dia);
+                
+                
+                if(visitasDia>diaMasVisitado){
+                    diaMasVisitado = visitasDia;
+                    escenarioMasVisitado = escenario;
+                    maxDia = dia;
+                }
+                
+                
+                if(visitasDia<diaMenosVisitado){
+                    diaMenosVisitado = visitasDia;
+                    escenarioMenosVisitado = escenario;
+                    minDia = dia;
+                }
+                
+            }
+            
+        }
+        
+        JOptionPane.showMessageDialog(null, "El dia más visitado es "+diasSemana[maxDia]+" y el escenario es "+nombresEscenarios[escenarioMasVisitado]);
+        
+        
+        JOptionPane.showMessageDialog(null, "El dia menos visitado es "+diasSemana[minDia]+" y el escenario es "+nombresEscenarios[escenarioMenosVisitado]);
+        
+        
+        
+    }//GEN-LAST:event_jBEscenarioMasYMenosVisitadoDiaActionPerformed
+
     public int contarTotalPersonas() {
         int totalDePersonas = 0;
 
@@ -325,6 +381,7 @@ public final class Scenarios extends javax.swing.JFrame {
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBEscenarioMasYMenosVisitadoDia;
     private javax.swing.JButton jbDiaMasVisitado;
     private javax.swing.JButton jbDiaMasVisitadoEstadio;
     private javax.swing.JButton jbEscenarioMenosVisitado;
