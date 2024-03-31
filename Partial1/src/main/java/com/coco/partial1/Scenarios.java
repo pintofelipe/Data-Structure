@@ -9,6 +9,8 @@ public final class Scenarios extends javax.swing.JFrame {
     /**
      * Creates new form Scenarios
      */
+    Shopping visit = new Shopping();
+
     List<List<Integer>> datos = new ArrayList<>();
     String[] nombresEscenarios = {"Mini pista patinaje", "Piscina olímpica", "Estadio", "Parque infantil"};
     String[] diasSemana = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
@@ -31,6 +33,7 @@ public final class Scenarios extends javax.swing.JFrame {
         jbPromedioDeVisitas = new javax.swing.JButton();
         jbDiaMasVisitadoEstadio = new javax.swing.JButton();
         jBEscenarioMasYMenosVisitadoDia = new javax.swing.JButton();
+        jbComprarEntrada = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,6 +97,13 @@ public final class Scenarios extends javax.swing.JFrame {
             }
         });
 
+        jbComprarEntrada.setText("Comprar entrada");
+        jbComprarEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbComprarEntradaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,17 +116,18 @@ public final class Scenarios extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jbDiaMasVisitadoEstadio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbEscenarioMenosVisitado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbTotalDePersonas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbPromedioDeVisitas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jBEscenarioMasYMenosVisitadoDia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jbDiaMasVisitadoEstadio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbEscenarioMenosVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbTotalDePersonas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbPromedioDeVisitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBEscenarioMasYMenosVisitadoDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(55, 55, 55)
-                        .addComponent(jbMatriz)))
-                .addContainerGap(219, Short.MAX_VALUE))
+                        .addComponent(jbMatriz)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addComponent(jbComprarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(69, 69, 69))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +140,9 @@ public final class Scenarios extends javax.swing.JFrame {
                         .addComponent(jbMatriz, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(48, 48, 48)
-                        .addComponent(jbEscenariosMasVisitados)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jbEscenariosMasVisitados)
+                            .addComponent(jbComprarEntrada))))
                 .addGap(12, 12, 12)
                 .addComponent(jbDiaMasVisitadoEstadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -184,23 +197,20 @@ public final class Scenarios extends javax.swing.JFrame {
 
         int diaMasVisitado = 0;
         int maxVisitas = 0;
-        int diaMenosVisitado =0;
-        int minVisitas =Integer.MAX_VALUE;
-        
-        
+        int diaMenosVisitado = 0;
+        int minVisitas = Integer.MAX_VALUE;
+
         for (int dia = 0; dia < 7; dia++) {
 
             int totalVisitasDia = 0;
             for (List<Integer> fila : datos) {
                 totalVisitasDia += fila.get(dia);
             }
-            
-            if(totalVisitasDia<minVisitas){
+
+            if (totalVisitasDia < minVisitas) {
                 minVisitas = totalVisitasDia;
                 diaMenosVisitado = dia;
             }
-            
-            
 
             if (totalVisitasDia > maxVisitas) {
                 maxVisitas = totalVisitasDia;
@@ -211,7 +221,7 @@ public final class Scenarios extends javax.swing.JFrame {
         }
 
         JOptionPane.showMessageDialog(null, "El dia más visitado es el dia " + diasSemana[diaMasVisitado]);
-        
+
         JOptionPane.showMessageDialog(null, "El dia menos visitado es el dia " + diasSemana[diaMenosVisitado]);
 
 
@@ -254,78 +264,97 @@ public final class Scenarios extends javax.swing.JFrame {
 
         double promedio = contarTotalPersonas() / 7;
 
-        JOptionPane.showMessageDialog(null, "El promedio de visitas a las semana es de "+promedio+" personas");
+        JOptionPane.showMessageDialog(null, "El promedio de visitas a las semana es de " + promedio + " personas");
     }//GEN-LAST:event_jbPromedioDeVisitasActionPerformed
 
     private void jbDiaMasVisitadoEstadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDiaMasVisitadoEstadioActionPerformed
-        
-        int diaMasVisitado =0;
-        int maxVisitas =0;
-        
-        
+
+        int diaMasVisitado = 0;
+        int maxVisitas = 0;
+
         for (int i = 0; i < 7; i++) {
-            
+
             int visitantesDia = datos.get(2).get(i);
-            
-            if(visitantesDia>maxVisitas){
+
+            if (visitantesDia > maxVisitas) {
                 maxVisitas = visitantesDia;
                 diaMasVisitado = i;
             }
-            
-            
+
         }
-        
-        
-        JOptionPane.showMessageDialog(null, "El dia más visitado en el estadio es el dia "+diasSemana[diaMasVisitado]);
-        
-        
+
+        JOptionPane.showMessageDialog(null, "El dia más visitado en el estadio es el dia " + diasSemana[diaMasVisitado]);
+
+
     }//GEN-LAST:event_jbDiaMasVisitadoEstadioActionPerformed
 
     private void jBEscenarioMasYMenosVisitadoDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEscenarioMasYMenosVisitadoDiaActionPerformed
-       
-        int escenarioMasVisitado =0;
+
+        int escenarioMasVisitado = 0;
         int diaMasVisitado = 0;
-        int maxDia =0;
-        
+        int maxDia = 0;
+
         int diaMenosVisitado = Integer.MAX_VALUE;
-        int escenarioMenosVisitado =0;
-        int minDia =0;
-        
-        
-        for (int dia= 0; dia < 7; dia++) {
-            
-            int visitasDia =0;
-            
+        int escenarioMenosVisitado = 0;
+        int minDia = 0;
+
+        for (int dia = 0; dia < 7; dia++) {
+
+            int visitasDia = 0;
+
             for (int escenario = 0; escenario < 4; escenario++) {
-                
+
                 visitasDia = datos.get(escenario).get(dia);
-                
-                
-                if(visitasDia>diaMasVisitado){
+
+                if (visitasDia > diaMasVisitado) {
                     diaMasVisitado = visitasDia;
                     escenarioMasVisitado = escenario;
                     maxDia = dia;
                 }
-                
-                
-                if(visitasDia<diaMenosVisitado){
+
+                if (visitasDia < diaMenosVisitado) {
                     diaMenosVisitado = visitasDia;
                     escenarioMenosVisitado = escenario;
                     minDia = dia;
                 }
-                
+
             }
-            
+
         }
-        
-        JOptionPane.showMessageDialog(null, "El dia más visitado es "+diasSemana[maxDia]+" y el escenario es "+nombresEscenarios[escenarioMasVisitado]);
-        
-        
-        JOptionPane.showMessageDialog(null, "El dia menos visitado es "+diasSemana[minDia]+" y el escenario es "+nombresEscenarios[escenarioMenosVisitado]);
-        
-        
-        
+
+        JOptionPane.showMessageDialog(null, "El dia más visitado es " + diasSemana[maxDia] + " y el escenario es " + nombresEscenarios[escenarioMasVisitado]);
+
+        JOptionPane.showMessageDialog(null, "El dia menos visitado es " + diasSemana[minDia] + " y el escenario es " + nombresEscenarios[escenarioMenosVisitado]);
+
+
     }//GEN-LAST:event_jBEscenarioMasYMenosVisitadoDiaActionPerformed
+
+    private void jbComprarEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbComprarEntradaActionPerformed
+
+        /*import java.time.LocalDate;
+            import java.time.Period;
+            import java.time.format.DateTimeFormatter;
+
+        // 01/01/2000
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate fechaNac = LocalDate.parse("15/08/1993", fmt);
+        LocalDate ahora = LocalDate.now();
+
+            Period periodo = Period.between(fechaNac, ahora);
+            System.out.printf("Tu edad es: %s años, %s meses y %s días",
+        periodo.getYears(), periodo.getMonths(), periodo.getDays());*/
+        
+        String name = JOptionPane.showInputDialog("Ingrese su nombre: ");
+        String document = JOptionPane.showInputDialog("Ingrese su documento: ");
+        String sexo = JOptionPane.showInputDialog("Ingrese su sexo = {Hombre - Mujer} ");
+        String fechaNacimiento = JOptionPane.showInputDialog("Ingrese su fecha de nacimiento =  dd-MM-yyyy ");
+        String lugarAVisitar = JOptionPane.showInputDialog("Ingrese su fecha de nacimiento =  dd-MM-yyyy ");
+        
+        
+        visit.enterPerson(name, document, sexo, fechaNacimiento, lugarAVisitar);
+
+
+    }//GEN-LAST:event_jbComprarEntradaActionPerformed
 
     public int contarTotalPersonas() {
         int totalDePersonas = 0;
@@ -382,6 +411,7 @@ public final class Scenarios extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBEscenarioMasYMenosVisitadoDia;
+    private javax.swing.JButton jbComprarEntrada;
     private javax.swing.JButton jbDiaMasVisitado;
     private javax.swing.JButton jbDiaMasVisitadoEstadio;
     private javax.swing.JButton jbEscenarioMenosVisitado;
