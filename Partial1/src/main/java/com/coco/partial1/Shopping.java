@@ -14,7 +14,7 @@ public class Shopping {
     }
     
     
-    public void enterPerson(String name,String document, String sexo, String fechaNacimiento,String lugarAVisitar){
+    public void enterPerson(String name,String document, String sexo, String fechaNacimiento,int lugarAVisitar){
         
         Visit visita = new Visit(name, document, sexo, fechaNacimiento, lugarAVisitar, null);
 

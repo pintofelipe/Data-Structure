@@ -43,7 +43,10 @@
                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="jbMatriz" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="48" max="32767" attributes="0"/>
-                      <Component id="jbComprarEntrada" min="-2" pref="225" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jbComprarEntrada" max="32767" attributes="0"/>
+                          <Component id="jbConsultarEscenario" pref="225" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
@@ -69,7 +72,10 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="jbDiaMasVisitadoEstadio" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jbDiaMasVisitadoEstadio" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbConsultarEscenario" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jbEscenarioMenosVisitado" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -167,6 +173,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbComprarEntradaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbConsultarEscenario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Consultar escenario"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbConsultarEscenarioActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

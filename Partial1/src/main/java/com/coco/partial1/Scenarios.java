@@ -3,6 +3,9 @@ package com.coco.partial1;
 import java.util.List;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public final class Scenarios extends javax.swing.JFrame {
 
@@ -34,6 +37,7 @@ public final class Scenarios extends javax.swing.JFrame {
         jbDiaMasVisitadoEstadio = new javax.swing.JButton();
         jBEscenarioMasYMenosVisitadoDia = new javax.swing.JButton();
         jbComprarEntrada = new javax.swing.JButton();
+        jbConsultarEscenario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +108,13 @@ public final class Scenarios extends javax.swing.JFrame {
             }
         });
 
+        jbConsultarEscenario.setText("Consultar escenario");
+        jbConsultarEscenario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbConsultarEscenarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -126,7 +137,9 @@ public final class Scenarios extends javax.swing.JFrame {
                         .addGap(55, 55, 55)
                         .addComponent(jbMatriz)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addComponent(jbComprarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jbComprarEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbConsultarEscenario, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))))
                 .addGap(69, 69, 69))
         );
         layout.setVerticalGroup(
@@ -144,7 +157,9 @@ public final class Scenarios extends javax.swing.JFrame {
                             .addComponent(jbEscenariosMasVisitados)
                             .addComponent(jbComprarEntrada))))
                 .addGap(12, 12, 12)
-                .addComponent(jbDiaMasVisitadoEstadio)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbDiaMasVisitadoEstadio)
+                    .addComponent(jbConsultarEscenario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbEscenarioMenosVisitado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -344,17 +359,59 @@ public final class Scenarios extends javax.swing.JFrame {
             System.out.printf("Tu edad es: %s años, %s meses y %s días",
         periodo.getYears(), periodo.getMonths(), periodo.getDays());*/
         
+        boolean aprovado = false;
+        int age; 
+        
         String name = JOptionPane.showInputDialog("Ingrese su nombre: ");
         String document = JOptionPane.showInputDialog("Ingrese su documento: ");
         String sexo = JOptionPane.showInputDialog("Ingrese su sexo = {Hombre - Mujer} ");
         String fechaNacimiento = JOptionPane.showInputDialog("Ingrese su fecha de nacimiento =  dd-MM-yyyy ");
-        String lugarAVisitar = JOptionPane.showInputDialog("Ingrese su fecha de nacimiento =  dd-MM-yyyy ");
+        
+        //Funcionalidad de la fecha de nacimiento
+        
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate fechaNac = LocalDate.parse(fechaNacimiento, fmt);
+        LocalDate ahora = LocalDate.now();
+        
+        Period periodo = Period.between( fechaNac,ahora);
+        age = periodo.getYears();
+        
+        //Contruyo menú de escenarios 
+        StringBuilder menu = new StringBuilder("Lugares a los que puede ir:\n"); // Un StringBuilder es una clase que se utiliza para construir cadenas de caracteres de manera eficiente en términos de memoria y rendimiento.
+        
+        for (int i = 0; i < nombresEscenarios.length; i++) {
+            menu.append((i+1)).append(". ").append(nombresEscenarios[i]).append("\n");
+        }
+        
+        menu.append("\nIngrese el número correspondiente al cuál deseas ir: ");
         
         
-        visit.enterPerson(name, document, sexo, fechaNacimiento, lugarAVisitar);
+        int lugarAVisitar = Integer.parseInt(JOptionPane.showInputDialog(null,menu));
+        
+        
+        
+        if(lugarAVisitar == 2){
+            if(age<18){
+                JOptionPane.showMessageDialog(null, "Lo sentimos "+name+" eres menor de edad para ingresar a la "+nombresEscenarios[1]);
+            }else{
+                 visit.enterPerson(name, document, sexo, fechaNacimiento, lugarAVisitar);
+            }
+        }else{
+             visit.enterPerson(name, document, sexo, fechaNacimiento, lugarAVisitar);
+        }
+        
+        
+       
 
 
     }//GEN-LAST:event_jbComprarEntradaActionPerformed
+
+    private void jbConsultarEscenarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultarEscenarioActionPerformed
+        
+        
+        
+        
+    }//GEN-LAST:event_jbConsultarEscenarioActionPerformed
 
     public int contarTotalPersonas() {
         int totalDePersonas = 0;
@@ -412,6 +469,7 @@ public final class Scenarios extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBEscenarioMasYMenosVisitadoDia;
     private javax.swing.JButton jbComprarEntrada;
+    private javax.swing.JButton jbConsultarEscenario;
     private javax.swing.JButton jbDiaMasVisitado;
     private javax.swing.JButton jbDiaMasVisitadoEstadio;
     private javax.swing.JButton jbEscenarioMenosVisitado;

@@ -4,20 +4,20 @@ package com.coco.partial1;
  * @author pinto 77
  */
 public class Visit  extends Person{
-    private String LugarAVisitar;
+    private int LugarAVisitar;
     private Visit direccion;
 
-    public Visit( String nombre, String documento, String sexo, String FechaDeNacimiento,String lugarAVisitar, Visit direccion) {
+    public Visit( String nombre, String documento, String sexo, String FechaDeNacimiento, int lugarAVisitar, Visit direccion) {
         super(nombre, documento, sexo, FechaDeNacimiento);
         this.LugarAVisitar = LugarAVisitar;
         this.direccion = direccion;
     }
 
-    public String getLugarAVisitar() {
+    public int getLugarAVisitar() {
         return LugarAVisitar;
     }
 
-    public void setLugarAVisitar(String LugarAVisitar) {
+    public void setLugarAVisitar(int LugarAVisitar) {
         this.LugarAVisitar = LugarAVisitar;
     }
 
