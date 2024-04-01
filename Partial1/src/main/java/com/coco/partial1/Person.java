@@ -1,10 +1,5 @@
 package com.coco.partial1;
 
-/**
- * @author pinto 77 documento, nombre, fecha de nacimiento y lugar que desea
- * visitar, sexo, tenga presente que un menor de edad no puede entrar a la
- * piscina olímpica.
- */
 public class Person {
 
     private String nombre;

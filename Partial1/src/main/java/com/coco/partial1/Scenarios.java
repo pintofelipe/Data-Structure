@@ -317,7 +317,7 @@ public final class Scenarios extends javax.swing.JFrame {
 
             int visitasDia = 0;
 
-            for (int escenario = 0; escenario < 4; escenario++) {
+            for ( int escenario = 0; escenario < 4; escenario++) {
 
                 visitasDia = datos.get(escenario).get(dia);
 
@@ -358,59 +358,84 @@ public final class Scenarios extends javax.swing.JFrame {
             Period periodo = Period.between(fechaNac, ahora);
             System.out.printf("Tu edad es: %s años, %s meses y %s días",
         periodo.getYears(), periodo.getMonths(), periodo.getDays());*/
-        
         boolean aprovado = false;
-        int age; 
-        
+        int age;
+
         String name = JOptionPane.showInputDialog("Ingrese su nombre: ");
         String document = JOptionPane.showInputDialog("Ingrese su documento: ");
         String sexo = JOptionPane.showInputDialog("Ingrese su sexo = {Hombre - Mujer} ");
         String fechaNacimiento = JOptionPane.showInputDialog("Ingrese su fecha de nacimiento =  dd-MM-yyyy ");
-        
+
         //Funcionalidad de la fecha de nacimiento
-        
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDate fechaNac = LocalDate.parse(fechaNacimiento, fmt);
         LocalDate ahora = LocalDate.now();
-        
-        Period periodo = Period.between( fechaNac,ahora);
+
+        Period periodo = Period.between(fechaNac, ahora);
         age = periodo.getYears();
-        
+
         //Contruyo menú de escenarios 
         StringBuilder menu = new StringBuilder("Lugares a los que puede ir:\n"); // Un StringBuilder es una clase que se utiliza para construir cadenas de caracteres de manera eficiente en términos de memoria y rendimiento.
-        
+
         for (int i = 0; i < nombresEscenarios.length; i++) {
-            menu.append((i+1)).append(". ").append(nombresEscenarios[i]).append("\n");
+            menu.append((i + 1)).append(". ").append(nombresEscenarios[i]).append("\n");
         }
-        
+
         menu.append("\nIngrese el número correspondiente al cuál deseas ir: ");
-        
-        
-        int lugarAVisitar = Integer.parseInt(JOptionPane.showInputDialog(null,menu));
-        
-        
-        
-        if(lugarAVisitar == 2){
-            if(age<18){
-                JOptionPane.showMessageDialog(null, "Lo sentimos "+name+" eres menor de edad para ingresar a la "+nombresEscenarios[1]);
-            }else{
-                 visit.enterPerson(name, document, sexo, fechaNacimiento, lugarAVisitar);
+
+        int lugarAVisitar = Integer.parseInt(JOptionPane.showInputDialog(null, menu));
+
+        if (lugarAVisitar == 2) {
+            if (age < 18) {
+                JOptionPane.showMessageDialog(null, "Lo sentimos " + name + " eres menor de edad para ingresar a la " + nombresEscenarios[1]);
+            } else {
+                visit.enterPerson(name, document, sexo, fechaNacimiento, lugarAVisitar);
             }
-        }else{
-             visit.enterPerson(name, document, sexo, fechaNacimiento, lugarAVisitar);
+        } else {
+            visit.enterPerson(name, document, sexo, fechaNacimiento, lugarAVisitar);
         }
-        
-        
-       
 
 
     }//GEN-LAST:event_jbComprarEntradaActionPerformed
 
     private void jbConsultarEscenarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultarEscenarioActionPerformed
+         StringBuilder menu = new StringBuilder("Lugares a los que puede ir:\n");
+        for (int i = 0; i < nombresEscenarios.length; i++) {
+            menu.append((i + 1)).append(". ").append(nombresEscenarios[i]).append("\n");
+        }
+
+         int escenario = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el número correspondiente al escenario: \n" + menu.append(0)));
+    
         
-        
-        
-        
+        int totalVisitas = 0;
+        int maxVisitas = 0;
+        int minVisitas = Integer.MAX_VALUE;
+        int maxDia = 0;
+        int minDia = 0;
+
+        for (int dia = 0; dia < 7; dia++) {
+            int visitasDia = datos.get(escenario - 1).get(dia);
+            totalVisitas += visitasDia;
+
+            if (visitasDia > maxVisitas) {
+                maxVisitas = visitasDia;
+                maxDia = dia;
+            }
+
+            if (visitasDia < minVisitas) {
+                minVisitas = visitasDia;
+                minDia = dia;
+            }
+        }
+
+        int promedio = Math.round(totalVisitas / 7);
+
+        JOptionPane.showMessageDialog(null, "Escenario " + escenario + ":\n"
+                + "Día más visitado: " + diasSemana[maxDia] + " con " + maxVisitas + " visitas.\n"
+                + "Día menos visitado: " + diasSemana[minDia] + " con " + minVisitas + " visitas.\n"
+                + "Promedio diario: " + promedio + " visitantes.");
+
+
     }//GEN-LAST:event_jbConsultarEscenarioActionPerformed
 
     public int contarTotalPersonas() {
