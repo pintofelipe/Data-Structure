@@ -23,70 +23,81 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
-                      <Component id="jlTitle" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jbDiaMasVisitadoEstadio" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jbEscenarioMenosVisitado" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jbTotalDePersonas" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jbPromedioDeVisitas" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jBEscenarioMasYMenosVisitadoDia" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jbDiaMasVisitado" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jbEscenariosMasVisitados" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="jbMatriz" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="48" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jbComprarEntrada" max="32767" attributes="0"/>
-                          <Component id="jbConsultarEscenario" pref="225" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jbDiaMasVisitadoEstadio" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jbEscenarioMenosVisitado" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbTotalDePersonas" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbPromedioDeVisitas" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jBEscenarioMasYMenosVisitadoDia" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbDiaMasVisitado" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbEscenariosMasVisitados" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <Component id="jbMatriz" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="60" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jbHombresYmujeres" max="32767" attributes="0"/>
+                  <Component id="jbConsultarEscenario" pref="225" max="32767" attributes="0"/>
+                  <Component id="jbComprarEntrada" pref="225" max="32767" attributes="0"/>
+                  <Component id="jbconsultarEntradas" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbEntradasCompradasPorPersona" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbAdultosMayores" max="32767" attributes="0"/>
+                  <Component id="jbMasMujeres" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jlTitle" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jlTitle" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jbMatriz" min="-2" pref="31" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jbEscenariosMasVisitados" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jbComprarEntrada" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jbDiaMasVisitadoEstadio" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbConsultarEscenario" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jbMatriz" min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbEscenariosMasVisitados" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbComprarEntrada" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jbEscenarioMenosVisitado" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbDiaMasVisitadoEstadio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbConsultarEscenario" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jbTotalDePersonas" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbEscenarioMenosVisitado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbconsultarEntradas" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jbPromedioDeVisitas" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="jbDiaMasVisitado" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbTotalDePersonas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbEntradasCompradasPorPersona" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jBEscenarioMasYMenosVisitadoDia" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="161" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbPromedioDeVisitas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbAdultosMayores" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbDiaMasVisitado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbHombresYmujeres" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jBEscenarioMasYMenosVisitadoDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbMasMujeres" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="66" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -181,6 +192,46 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbConsultarEscenarioActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbconsultarEntradas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Consultar entradas"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbconsultarEntradasActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbEntradasCompradasPorPersona">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="# Entradas compradas"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbEntradasCompradasPorPersonaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbAdultosMayores">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adultos mayores"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAdultosMayoresActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbHombresYmujeres">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hombres y mujeres"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbHombresYmujeresActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbMasMujeres">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mas mujeres"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbMasMujeresActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

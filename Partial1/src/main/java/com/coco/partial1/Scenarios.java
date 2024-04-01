@@ -38,6 +38,11 @@ public final class Scenarios extends javax.swing.JFrame {
         jBEscenarioMasYMenosVisitadoDia = new javax.swing.JButton();
         jbComprarEntrada = new javax.swing.JButton();
         jbConsultarEscenario = new javax.swing.JButton();
+        jbconsultarEntradas = new javax.swing.JButton();
+        jbEntradasCompradasPorPersona = new javax.swing.JButton();
+        jbAdultosMayores = new javax.swing.JButton();
+        jbHombresYmujeres = new javax.swing.JButton();
+        jbMasMujeres = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,62 +120,108 @@ public final class Scenarios extends javax.swing.JFrame {
             }
         });
 
+        jbconsultarEntradas.setText("Consultar entradas");
+        jbconsultarEntradas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbconsultarEntradasActionPerformed(evt);
+            }
+        });
+
+        jbEntradasCompradasPorPersona.setText("# Entradas compradas");
+        jbEntradasCompradasPorPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEntradasCompradasPorPersonaActionPerformed(evt);
+            }
+        });
+
+        jbAdultosMayores.setText("Adultos mayores");
+        jbAdultosMayores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAdultosMayoresActionPerformed(evt);
+            }
+        });
+
+        jbHombresYmujeres.setText("Hombres y mujeres");
+        jbHombresYmujeres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbHombresYmujeresActionPerformed(evt);
+            }
+        });
+
+        jbMasMujeres.setText("Mas mujeres");
+        jbMasMujeres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMasMujeresActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(jlTitle))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jbDiaMasVisitadoEstadio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbEscenarioMenosVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbTotalDePersonas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbPromedioDeVisitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBEscenarioMasYMenosVisitadoDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(55, 55, 55)
-                        .addComponent(jbMatriz)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jbComprarEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbConsultarEscenario, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))))
-                .addGap(69, 69, 69))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jbDiaMasVisitadoEstadio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbEscenarioMenosVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbTotalDePersonas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbPromedioDeVisitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBEscenarioMasYMenosVisitadoDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addComponent(jbMatriz)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jbHombresYmujeres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbConsultarEscenario, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                    .addComponent(jbComprarEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                    .addComponent(jbconsultarEntradas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbEntradasCompradasPorPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbAdultosMayores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbMasMujeres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(43, 43, 43))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlTitle)
+                .addGap(189, 189, 189))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addComponent(jlTitle)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jbMatriz, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbEscenariosMasVisitados)
-                            .addComponent(jbComprarEntrada))))
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(18, 18, 18)
+                .addComponent(jbMatriz, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbEscenariosMasVisitados)
+                    .addComponent(jbComprarEntrada))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbDiaMasVisitadoEstadio)
                     .addComponent(jbConsultarEscenario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbEscenarioMenosVisitado)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbEscenarioMenosVisitado)
+                    .addComponent(jbconsultarEntradas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbTotalDePersonas)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbTotalDePersonas)
+                    .addComponent(jbEntradasCompradasPorPersona))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbPromedioDeVisitas)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbPromedioDeVisitas)
+                    .addComponent(jbAdultosMayores))
                 .addGap(12, 12, 12)
-                .addComponent(jbDiaMasVisitado)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbDiaMasVisitado)
+                    .addComponent(jbHombresYmujeres))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jBEscenarioMasYMenosVisitadoDia)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBEscenarioMasYMenosVisitadoDia)
+                    .addComponent(jbMasMujeres))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         pack();
@@ -317,7 +368,7 @@ public final class Scenarios extends javax.swing.JFrame {
 
             int visitasDia = 0;
 
-            for ( int escenario = 0; escenario < 4; escenario++) {
+            for (int escenario = 0; escenario < 4; escenario++) {
 
                 visitasDia = datos.get(escenario).get(dia);
 
@@ -399,14 +450,13 @@ public final class Scenarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jbComprarEntradaActionPerformed
 
     private void jbConsultarEscenarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultarEscenarioActionPerformed
-         StringBuilder menu = new StringBuilder("Lugares a los que puede ir:\n");
+        StringBuilder menu = new StringBuilder("Lugares a los que puede ir:\n");
         for (int i = 0; i < nombresEscenarios.length; i++) {
             menu.append((i + 1)).append(". ").append(nombresEscenarios[i]).append("\n");
         }
 
-         int escenario = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el número correspondiente al escenario: \n" + menu.append(0)));
-    
-        
+        int escenario = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el número correspondiente al escenario: \n" + menu.append(0)));
+
         int totalVisitas = 0;
         int maxVisitas = 0;
         int minVisitas = Integer.MAX_VALUE;
@@ -437,6 +487,34 @@ public final class Scenarios extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jbConsultarEscenarioActionPerformed
+
+    private void jbconsultarEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbconsultarEntradasActionPerformed
+        StringBuilder menu = new StringBuilder("Lugares a los que puede ir:\n");
+        for (int i = 0; i < nombresEscenarios.length; i++) {
+            menu.append((i + 1)).append(". ").append(nombresEscenarios[i]).append("\n");
+        }
+
+        int escenario = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el número correspondiente al escenario: \n" + menu.append(0)));
+
+        visit.printEntradasVendidasPorEscenario(escenario);
+    }//GEN-LAST:event_jbconsultarEntradasActionPerformed
+
+    private void jbEntradasCompradasPorPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEntradasCompradasPorPersonaActionPerformed
+        String persona = JOptionPane.showInputDialog("ingrese su documento");
+        visit.printEntradasCompradasPorPersona(persona);
+    }//GEN-LAST:event_jbEntradasCompradasPorPersonaActionPerformed
+
+    private void jbAdultosMayoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAdultosMayoresActionPerformed
+        visit.countMayores65();
+    }//GEN-LAST:event_jbAdultosMayoresActionPerformed
+
+    private void jbHombresYmujeresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHombresYmujeresActionPerformed
+        visit.countHombresMujeres();
+    }//GEN-LAST:event_jbHombresYmujeresActionPerformed
+
+    private void jbMasMujeresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMasMujeresActionPerformed
+        visit.getEscenarioConMasMujeres();
+    }//GEN-LAST:event_jbMasMujeresActionPerformed
 
     public int contarTotalPersonas() {
         int totalDePersonas = 0;
@@ -493,15 +571,20 @@ public final class Scenarios extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBEscenarioMasYMenosVisitadoDia;
+    private javax.swing.JButton jbAdultosMayores;
     private javax.swing.JButton jbComprarEntrada;
     private javax.swing.JButton jbConsultarEscenario;
     private javax.swing.JButton jbDiaMasVisitado;
     private javax.swing.JButton jbDiaMasVisitadoEstadio;
+    private javax.swing.JButton jbEntradasCompradasPorPersona;
     private javax.swing.JButton jbEscenarioMenosVisitado;
     private javax.swing.JButton jbEscenariosMasVisitados;
+    private javax.swing.JButton jbHombresYmujeres;
+    private javax.swing.JButton jbMasMujeres;
     private javax.swing.JButton jbMatriz;
     private javax.swing.JButton jbPromedioDeVisitas;
     private javax.swing.JButton jbTotalDePersonas;
+    private javax.swing.JButton jbconsultarEntradas;
     private javax.swing.JLabel jlTitle;
     // End of variables declaration//GEN-END:variables
 }
