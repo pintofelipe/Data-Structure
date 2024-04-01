@@ -15,7 +15,7 @@ public final class Scenarios extends javax.swing.JFrame {
     Shopping visit = new Shopping();
 
     List<List<Integer>> datos = new ArrayList<>();
-    String[] nombresEscenarios = {"Mini pista patinaje", "Piscina olímpica", "Estadio", "Parque infantil"};
+    public String[] nombresEscenarios = {"Mini pista patinaje", "Piscina olímpica", "Estadio", "Parque infantil"};
     String[] diasSemana = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
 
     public Scenarios() {
@@ -148,7 +148,7 @@ public final class Scenarios extends javax.swing.JFrame {
             }
         });
 
-        jbMasMujeres.setText("Mas mujeres");
+        jbMasMujeres.setText("Más mujeres");
         jbMasMujeres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbMasMujeresActionPerformed(evt);
@@ -513,7 +513,10 @@ public final class Scenarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jbHombresYmujeresActionPerformed
 
     private void jbMasMujeresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMasMujeresActionPerformed
-        visit.getEscenarioConMasMujeres();
+       
+        int escenario = visit.getEscenarioConMasMujeres();
+        
+        JOptionPane.showMessageDialog(null, "El escenario en el que más mujeres han comprado entradas es el " + nombresEscenarios[escenario]);
     }//GEN-LAST:event_jbMasMujeresActionPerformed
 
     public int contarTotalPersonas() {

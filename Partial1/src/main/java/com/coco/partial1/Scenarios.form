@@ -228,7 +228,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jbMasMujeres">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mas mujeres"/>
+        <Property name="text" type="java.lang.String" value="M&#xe1;s mujeres"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbMasMujeresActionPerformed"/>

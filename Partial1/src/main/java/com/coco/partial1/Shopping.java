@@ -123,18 +123,18 @@ public class Shopping {
         JOptionPane.showMessageDialog(null, "Han comprado entradas " + hombres + " hombres y " + mujeres + " mujeres");
     }
 
-    public void getEscenarioConMasMujeres() {
+    public int getEscenarioConMasMujeres() {
         int maxMujeres = 0;
         int escenarioConMasMujeres = 0;
 
         for (int i = 0; i < mujeresPorEscenario.length; i++) {
             if (mujeresPorEscenario[i] > maxMujeres) {
                 maxMujeres = mujeresPorEscenario[i];
-                escenarioConMasMujeres = i + 1; // Escenario se indexa desde 1
+                escenarioConMasMujeres = i; // Escenario se indexa desde 0 por el arra escenarios
             }
         }
 
-        JOptionPane.showMessageDialog(null, "El escenario en el que más mujeres han comprado entradas es el " + escenarioConMasMujeres);
+        return escenarioConMasMujeres;
     }
 
 }
