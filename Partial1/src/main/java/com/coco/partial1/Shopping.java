@@ -17,9 +17,9 @@ public class Shopping {
     public Shopping() {
 
         inicio = null;
-        entradasVendidasPorEscenario = new int[3]; // initialize the array with the maximum number of scenarios
+        entradasVendidasPorEscenario = new int[4]; // initialize the array with the maximum number of scenarios
         escenarioActual = 0;
-        mujeresPorEscenario = new int[3];
+        mujeresPorEscenario = new int[4];
 
     }
 
@@ -37,17 +37,17 @@ public class Shopping {
             }
 
             temporal.setDireccion(visita); // se queda en la ultima posción
-
         }
+        
         if (lugarAVisitar != escenarioActual) {
             escenarioActual = lugarAVisitar;
-            entradasVendidasPorEscenario[escenarioActual - 1] = 1;
+            entradasVendidasPorEscenario[escenarioActual-1] = 1;
         } else {
-            entradasVendidasPorEscenario[escenarioActual - 1]++;
+            entradasVendidasPorEscenario[escenarioActual-1]++;
         }
         
         if (sexo.equalsIgnoreCase("Mujer")) {
-            mujeresPorEscenario[lugarAVisitar - 1]++;
+            mujeresPorEscenario[lugarAVisitar-1]++;
         }
     
     }
@@ -130,7 +130,7 @@ public class Shopping {
         for (int i = 0; i < mujeresPorEscenario.length; i++) {
             if (mujeresPorEscenario[i] > maxMujeres) {
                 maxMujeres = mujeresPorEscenario[i];
-                escenarioConMasMujeres = i; // Escenario se indexa desde 0 por el arra escenarios
+                escenarioConMasMujeres = i++; // Escenario se indexa desde 0 por el arra escenarios
             }
         }
 

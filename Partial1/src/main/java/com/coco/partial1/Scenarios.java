@@ -27,7 +27,6 @@ public final class Scenarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jbMatriz = new javax.swing.JButton();
         jbEscenariosMasVisitados = new javax.swing.JButton();
         jlTitle = new javax.swing.JLabel();
         jbDiaMasVisitado = new javax.swing.JButton();
@@ -46,13 +45,6 @@ public final class Scenarios extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jbMatriz.setText("Matriz");
-        jbMatriz.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbMatrizActionPerformed(evt);
-            }
-        });
-
         jbEscenariosMasVisitados.setText("Escenario más visitado");
         jbEscenariosMasVisitados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +54,7 @@ public final class Scenarios extends javax.swing.JFrame {
 
         jlTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jlTitle.setForeground(new java.awt.Color(153, 102, 255));
-        jlTitle.setText("Escenarios Visitados en Ocaña");
+        jlTitle.setText("Escenarios visitados en Ocaña");
 
         jbDiaMasVisitado.setText("Dia más  y menos visitado");
         jbDiaMasVisitado.addActionListener(new java.awt.event.ActionListener() {
@@ -169,9 +161,7 @@ public final class Scenarios extends javax.swing.JFrame {
                     .addComponent(jBEscenarioMasYMenosVisitadoDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbDiaMasVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbEscenariosMasVisitados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(55, 55, 55)
-                .addComponent(jbMatriz)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jbHombresYmujeres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbConsultarEscenario, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
@@ -181,19 +171,17 @@ public final class Scenarios extends javax.swing.JFrame {
                     .addComponent(jbAdultosMayores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbMasMujeres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(43, 43, 43))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(199, 199, 199)
                 .addComponent(jlTitle)
-                .addGap(189, 189, 189))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(27, 27, 27)
                 .addComponent(jlTitle)
-                .addGap(18, 18, 18)
-                .addComponent(jbMatriz, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbEscenariosMasVisitados)
                     .addComponent(jbComprarEntrada))
@@ -226,10 +214,6 @@ public final class Scenarios extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jbMatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMatrizActionPerformed
-        mostrarMatriz(datos);
-    }//GEN-LAST:event_jbMatrizActionPerformed
 
     private void jbEscenariosMasVisitadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEscenariosMasVisitadosActionPerformed
 
@@ -454,8 +438,9 @@ public final class Scenarios extends javax.swing.JFrame {
         for (int i = 0; i < nombresEscenarios.length; i++) {
             menu.append((i + 1)).append(". ").append(nombresEscenarios[i]).append("\n");
         }
+        menu.append("\nIngrese el número correspondiente al cuál deseas ir: ");
 
-        int escenario = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el número correspondiente al escenario: \n" + menu.append(0)));
+        int escenario = Integer.parseInt(JOptionPane.showInputDialog(null, menu));
 
         int totalVisitas = 0;
         int maxVisitas = 0;
@@ -489,12 +474,15 @@ public final class Scenarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jbConsultarEscenarioActionPerformed
 
     private void jbconsultarEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbconsultarEntradasActionPerformed
-        StringBuilder menu = new StringBuilder("Lugares a los que puede ir:\n");
+        
+        StringBuilder menu = new StringBuilder("Consultar escenarios:\n");
+        
         for (int i = 0; i < nombresEscenarios.length; i++) {
             menu.append((i + 1)).append(". ").append(nombresEscenarios[i]).append("\n");
         }
+        menu.append("\nIngrese el número correspondiente al escenario: ");
 
-        int escenario = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el número correspondiente al escenario: \n" + menu.append(0)));
+        int escenario = Integer.parseInt(JOptionPane.showInputDialog(null, menu));
 
         visit.printEntradasVendidasPorEscenario(escenario);
     }//GEN-LAST:event_jbconsultarEntradasActionPerformed
@@ -584,7 +572,6 @@ public final class Scenarios extends javax.swing.JFrame {
     private javax.swing.JButton jbEscenariosMasVisitados;
     private javax.swing.JButton jbHombresYmujeres;
     private javax.swing.JButton jbMasMujeres;
-    private javax.swing.JButton jbMatriz;
     private javax.swing.JButton jbPromedioDeVisitas;
     private javax.swing.JButton jbTotalDePersonas;
     private javax.swing.JButton jbconsultarEntradas;

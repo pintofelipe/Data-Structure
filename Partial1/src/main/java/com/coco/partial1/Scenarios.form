@@ -34,9 +34,7 @@
                   <Component id="jbDiaMasVisitado" alignment="0" max="32767" attributes="0"/>
                   <Component id="jbEscenariosMasVisitados" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-              <Component id="jbMatriz" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="60" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jbHombresYmujeres" max="32767" attributes="0"/>
                   <Component id="jbConsultarEscenario" pref="225" max="32767" attributes="0"/>
@@ -48,21 +46,19 @@
               </Group>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
               <Component id="jlTitle" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
+              <EmptySpace pref="206" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="jlTitle" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jbMatriz" min="-2" pref="31" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jbEscenariosMasVisitados" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jbComprarEntrada" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -103,14 +99,6 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jbMatriz">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Matriz"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbMatrizActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="jbEscenariosMasVisitados">
       <Properties>
         <Property name="text" type="java.lang.String" value="Escenario m&#xe1;s visitado"/>
@@ -127,7 +115,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="66" red="99" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Escenarios Visitados en Oca&#xf1;a"/>
+        <Property name="text" type="java.lang.String" value="Escenarios visitados en Oca&#xf1;a"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jbDiaMasVisitado">
