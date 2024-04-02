@@ -1,6 +1,8 @@
 package com.coco.partial1;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 
 /**
@@ -89,6 +91,24 @@ public class Shopping {
     }
 
     private int getEdad(String fechaNacimiento) {
+        
+        int edad =0;
+        
+        //Funcionalidad de la fecha de nacimiento
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate fechaNac = LocalDate.parse(fechaNacimiento, fmt);
+        LocalDate ahora = LocalDate.now();
+        Period periodo = Period.between(fechaNac, ahora);
+        
+        edad = periodo.getYears();
+        
+        
+        
+        
+        
+        
+        
+        /*
         String[] fechaNacimientoSplit = fechaNacimiento.split("-");
         int year = Integer.parseInt(fechaNacimientoSplit[0]);
         int month = Integer.parseInt(fechaNacimientoSplit[1]);
@@ -98,7 +118,7 @@ public class Shopping {
 
         if (LocalDate.now().getMonthValue() < month || LocalDate.now().getMonthValue() == month && LocalDate.now().getDayOfMonth() < day) {
             edad--;
-        }
+        }*/
 
         return edad;
     }
@@ -130,7 +150,7 @@ public class Shopping {
         for (int i = 0; i < mujeresPorEscenario.length; i++) {
             if (mujeresPorEscenario[i] > maxMujeres) {
                 maxMujeres = mujeresPorEscenario[i];
-                escenarioConMasMujeres = i++; // Escenario se indexa desde 0 por el arra escenarios
+                escenarioConMasMujeres = i++;
             }
         }
 

@@ -27,12 +27,12 @@
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jbDiaMasVisitadoEstadio" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jbEscenarioMenosVisitado" alignment="0" max="32767" attributes="0"/>
                   <Component id="jbTotalDePersonas" alignment="0" max="32767" attributes="0"/>
                   <Component id="jbPromedioDeVisitas" alignment="0" max="32767" attributes="0"/>
                   <Component id="jBEscenarioMasYMenosVisitadoDia" alignment="0" max="32767" attributes="0"/>
                   <Component id="jbDiaMasVisitado" alignment="0" max="32767" attributes="0"/>
                   <Component id="jbEscenariosMasVisitados" max="32767" attributes="0"/>
+                  <Component id="jbEscenarioMenosVisitado" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -61,17 +61,17 @@
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jbEscenariosMasVisitados" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbComprarEntrada" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jbDiaMasVisitadoEstadio" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jbConsultarEscenario" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jbEscenarioMenosVisitado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbDiaMasVisitadoEstadio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbComprarEntrada" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jbconsultarEntradas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbEscenarioMenosVisitado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
