@@ -29,13 +29,15 @@
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="jtNombre" min="-2" pref="124" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jbEntrarInicio" alignment="0" pref="122" max="32767" attributes="0"/>
-                  <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jButton3" alignment="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jbImprimir" alignment="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jbEntrarInicio" alignment="0" pref="122" max="32767" attributes="0"/>
+                      <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jbImprimir" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="jbAdelantarNombre" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,7 +53,7 @@
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Component id="jButton2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+              <Component id="jbAdelantarNombre" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="jbImprimir" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="82" max="32767" attributes="0"/>
@@ -82,11 +84,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Entrar al final"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="jbAdelantarNombre">
       <Properties>
         <Property name="text" type="java.lang.String" value="Adelante de un nodo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAdelantarNombreActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jbImprimir">
       <Properties>

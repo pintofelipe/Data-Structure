@@ -4,6 +4,8 @@
  */
 package com.coco77.doblelista;
 
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -33,7 +35,7 @@ public class MenuDoble extends javax.swing.JFrame {
         jtNombre = new javax.swing.JTextField();
         jbEntrarInicio = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jbAdelantarNombre = new javax.swing.JButton();
         jbImprimir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,8 +56,18 @@ public class MenuDoble extends javax.swing.JFrame {
         });
 
         jButton2.setText("Entrar al final");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Adelante de un nodo");
+        jbAdelantarNombre.setText("Adelante de un nodo");
+        jbAdelantarNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAdelantarNombreActionPerformed(evt);
+            }
+        });
 
         jbImprimir.setText("Imprimir Lista");
         jbImprimir.addActionListener(new java.awt.event.ActionListener() {
@@ -74,12 +86,13 @@ public class MenuDoble extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbEntrarInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jbImprimir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(64, 64, 64))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jbEntrarInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbImprimir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbAdelantarNombre))
+                .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,7 +105,7 @@ public class MenuDoble extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jButton2)
                 .addGap(28, 28, 28)
-                .addComponent(jButton3)
+                .addComponent(jbAdelantarNombre)
                 .addGap(37, 37, 37)
                 .addComponent(jbImprimir)
                 .addContainerGap(82, Short.MAX_VALUE))
@@ -115,6 +128,20 @@ public class MenuDoble extends javax.swing.JFrame {
     private void jtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtNombreActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        listaObj.finalLista(jtNombre.getText());
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jbAdelantarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAdelantarNombreActionPerformed
+                                              
+    String nombreExistente = jtNombre.getText(); // Obtener el texto ingresado en el campo de texto
+    String nombreNuevo = JOptionPane.showInputDialog("Ingrese el nuevo nodo: "); // Cambiar "NuevoNombre" por el nombre deseado para el nuevo nodo
+    listaObj.adelantarNodo(nombreExistente, nombreNuevo); // Llamar al método adelantarNodo con los nombres obtenidos
+
+
+        
+    }//GEN-LAST:event_jbAdelantarNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,8 +180,8 @@ public class MenuDoble extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jbAdelantarNombre;
     private javax.swing.JButton jbEntrarInicio;
     private javax.swing.JButton jbImprimir;
     private javax.swing.JTextField jtNombre;
