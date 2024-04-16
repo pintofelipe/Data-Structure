@@ -102,23 +102,7 @@ public class Shopping {
         
         edad = periodo.getYears();
         
-        
-        
-        
-        
-        
-        
-        /*
-        String[] fechaNacimientoSplit = fechaNacimiento.split("-");
-        int year = Integer.parseInt(fechaNacimientoSplit[0]);
-        int month = Integer.parseInt(fechaNacimientoSplit[1]);
-        int day = Integer.parseInt(fechaNacimientoSplit[2]);
 
-        int edad = LocalDate.now().getYear() - year;
-
-        if (LocalDate.now().getMonthValue() < month || LocalDate.now().getMonthValue() == month && LocalDate.now().getDayOfMonth() < day) {
-            edad--;
-        }*/
 
         return edad;
     }
