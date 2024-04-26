@@ -23,6 +23,7 @@ public class Main extends javax.swing.JFrame {
         jbshowDatosHaciaDelante = new javax.swing.JButton();
         jbDeleteDate = new javax.swing.JButton();
         jbActualizarDatos = new javax.swing.JButton();
+        jbActualizarOrden = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,24 +66,33 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jbActualizarOrden.setText("Actualizar orden");
+        jbActualizarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbActualizarOrdenActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(115, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jbInputDate, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbshowDatosHaciaDelante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbShowList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbDeleteDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbActualizarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbActualizarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jbshowDatosHaciaDelante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbShowList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbDeleteDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbActualizarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(36, 36, 36))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(108, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,16 +111,18 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jbShowList, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addComponent(jbDeleteDate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
                 .addComponent(jbActualizarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jbActualizarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbInputDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInputDateActionPerformed
-        String dato = JOptionPane.showInputDialog("Ingrese un dato para lista: ");
+        int dato = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un dato para lista: "));
         lista.inicio(dato);
     }//GEN-LAST:event_jbInputDateActionPerformed
 
@@ -123,13 +135,17 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jbshowDatosHaciaDelanteActionPerformed
 
     private void jbDeleteDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteDateActionPerformed
-        String dato = JOptionPane.showInputDialog("Ingrese el dato a eliminar: ");
+        int dato = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dato a eliminar: "));
         lista.eliminarDato(dato);
     }//GEN-LAST:event_jbDeleteDateActionPerformed
 
     private void jbActualizarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActualizarDatosActionPerformed
         lista.actualizarLista();
     }//GEN-LAST:event_jbActualizarDatosActionPerformed
+
+    private void jbActualizarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActualizarOrdenActionPerformed
+       lista.ActualizarOrden();
+    }//GEN-LAST:event_jbActualizarOrdenActionPerformed
 
 
     public static void main(String args[]) {
@@ -167,6 +183,7 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jbActualizarDatos;
+    private javax.swing.JButton jbActualizarOrden;
     private javax.swing.JButton jbDeleteDate;
     private javax.swing.JButton jbInputDate;
     private javax.swing.JButton jbShowList;

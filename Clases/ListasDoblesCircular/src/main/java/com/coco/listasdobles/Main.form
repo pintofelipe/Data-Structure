@@ -24,21 +24,24 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="115" max="32767" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="280" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Component id="jbInputDate" min="-2" pref="115" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jbshowDatosHaciaDelante" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jbShowList" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jbDeleteDate" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jbActualizarDatos" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbActualizarOrden" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jbshowDatosHaciaDelante" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jbShowList" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jbDeleteDate" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jbActualizarDatos" alignment="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="108" max="32767" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="280" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -62,9 +65,11 @@
                   </Group>
               </Group>
               <Component id="jbDeleteDate" min="-2" pref="32" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="jbActualizarDatos" min="-2" pref="36" max="-2" attributes="0"/>
-              <EmptySpace pref="50" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jbActualizarOrden" min="-2" pref="38" max="-2" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -119,6 +124,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbActualizarDatosActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbActualizarOrden">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Actualizar orden"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbActualizarOrdenActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

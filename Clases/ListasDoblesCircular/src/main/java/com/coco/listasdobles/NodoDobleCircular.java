@@ -12,7 +12,7 @@ public class NodoDobleCircular {
         ultimo = null;
     }
 
-    public void inicio(String dato) {
+    public void inicio(int dato) {
         NodoDC nuevo = new NodoDC();
 
         nuevo.setDato(dato);
@@ -55,7 +55,7 @@ public class NodoDobleCircular {
         } while (temporal != primero);
     }
 
-    public void eliminarDato(String dato) {
+    public void eliminarDato(int dato) {
 
         if (primero == null) {
             JOptionPane.showMessageDialog(null, "La lista está vacía");
@@ -67,7 +67,7 @@ public class NodoDobleCircular {
         boolean encontrado = false;
 
         do {
-            if (actual.getDato().equals(dato)) {
+            if (actual.getDato()==(dato)) {
                 encontrado = true;
                 break;
             }
@@ -98,7 +98,7 @@ public class NodoDobleCircular {
     
     
     public void actualizarLista(){
-        String datoBuscado = JOptionPane.showInputDialog("Ingrese el valor que desea buscar en la lista:");
+        int datoBuscado = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor que desea buscar en la lista:"));
 
         
         if (primero == null) {
@@ -111,7 +111,7 @@ public class NodoDobleCircular {
         boolean encontrado = false;
 
         do {
-            if (actual.getDato().equals(datoBuscado)) {
+            if (actual.getDato()==(datoBuscado)) {
                 encontrado = true;
                 break;
             }
@@ -119,8 +119,8 @@ public class NodoDobleCircular {
         } while (actual != primero);
 
         if (encontrado) {
-        String nodoAnterior = JOptionPane.showInputDialog("Ingrese el nuevo valor con el que desea actualizar los nodo anterior: ");
-        String nodoSiguiente = JOptionPane.showInputDialog("Ingrese el nuevo valor con el que desea actualizar los nodo siguiente: ");
+        int nodoAnterior = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el nuevo valor con el que desea actualizar los nodo anterior: "));
+        int nodoSiguiente = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el nuevo valor con el que desea actualizar los nodo siguiente: "));
            
             // Actualizar los valores de los nodos anterior y posterior al nodo encontrado
             actual.getAnt().setDato(nodoAnterior);
@@ -132,4 +132,56 @@ public class NodoDobleCircular {
         }
     }
 
+    
+    public void ActualizarOrden(){
+        int datoBuscado = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor que desea buscar en la lista:"));
+        
+        if (primero == null) {
+            JOptionPane.showMessageDialog(null, "La lista está vacía");
+            return;
+        }
+        
+        //Buscar el nodo que contiene el dato
+        NodoDC actual = primero;
+        boolean encontrado = false;
+        
+        
+        
+        do {
+            if (actual.getDato()==(datoBuscado)) {
+                encontrado = true;
+                break;
+            }
+            actual = actual.getSgt();
+        } while (actual != primero);
+        
+        if (encontrado) {
+        
+          // NodoDobleCircular temporal = actu
+            
+           
+            int datoAnterior = actual.getAnt().getDato();
+            int datoSiguiente = actual.getSgt().getDato();
+            
+            if(actual.getDato() < datoSiguiente){  
+                int temporal = actual.getDato(); 
+                actual.setDato(datoSiguiente);
+                actual.getSgt().setDato(temporal);
+                
+            }
+            
+            if(actual.getDato()<datoAnterior){
+                int temporal = actual.getDato();
+                actual.setDato(datoAnterior);
+                actual.getAnt().setDato(temporal);
+            }
+            
+            JOptionPane.showMessageDialog(null, "Valores actualizados correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(null, "El valor no se encontró en la lista.");
+        }
+        
+    }
+    
+    
 }

@@ -4,7 +4,7 @@ public class NodoDC {
 
     private NodoDC ant;
     private NodoDC sgt;
-    private String dato;
+    private int dato;
 
     public NodoDC getAnt() {
         return ant;
@@ -22,13 +22,15 @@ public class NodoDC {
         this.sgt = sgt;
     }
 
-    public String getDato() {
+    public int getDato() {
         return dato;
     }
 
-    public void setDato(String dato) {
+    public void setDato(int dato) {
         this.dato = dato;
     }
+
+
 
     
 }
