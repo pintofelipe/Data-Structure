@@ -98,7 +98,38 @@ public class NodoDobleCircular {
     
     
     public void actualizarLista(){
+        String datoBuscado = JOptionPane.showInputDialog("Ingrese el valor que desea buscar en la lista:");
+
         
+        if (primero == null) {
+            JOptionPane.showMessageDialog(null, "La lista está vacía");
+            return;
+        }
+
+        // Buscar el nodo que contiene el dato
+        NodoDC actual = primero;
+        boolean encontrado = false;
+
+        do {
+            if (actual.getDato().equals(datoBuscado)) {
+                encontrado = true;
+                break;
+            }
+            actual = actual.getSgt();
+        } while (actual != primero);
+
+        if (encontrado) {
+        String nodoAnterior = JOptionPane.showInputDialog("Ingrese el nuevo valor con el que desea actualizar los nodo anterior: ");
+        String nodoSiguiente = JOptionPane.showInputDialog("Ingrese el nuevo valor con el que desea actualizar los nodo siguiente: ");
+           
+            // Actualizar los valores de los nodos anterior y posterior al nodo encontrado
+            actual.getAnt().setDato(nodoAnterior);
+            actual.getSgt().setDato(nodoSiguiente);
+            
+            JOptionPane.showMessageDialog(null, "Valores actualizados correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(null, "El valor no se encontró en la lista.");
+        }
     }
 
 }
