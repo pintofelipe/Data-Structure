@@ -67,7 +67,7 @@ public class NodoDobleCircular {
         boolean encontrado = false;
 
         do {
-            if (actual.getDato()==(dato)) {
+            if (actual.getDato() == (dato)) {
                 encontrado = true;
                 break;
             }
@@ -95,12 +95,10 @@ public class NodoDobleCircular {
             JOptionPane.showMessageDialog(null, "El dato no se encontró en la lista");
         }
     }
-    
-    
-    public void actualizarLista(){
+
+    public void actualizarLista() {
         int datoBuscado = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor que desea buscar en la lista:"));
 
-        
         if (primero == null) {
             JOptionPane.showMessageDialog(null, "La lista está vacía");
             return;
@@ -111,7 +109,7 @@ public class NodoDobleCircular {
         boolean encontrado = false;
 
         do {
-            if (actual.getDato()==(datoBuscado)) {
+            if (actual.getDato() == (datoBuscado)) {
                 encontrado = true;
                 break;
             }
@@ -119,69 +117,120 @@ public class NodoDobleCircular {
         } while (actual != primero);
 
         if (encontrado) {
-        int nodoAnterior = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el nuevo valor con el que desea actualizar los nodo anterior: "));
-        int nodoSiguiente = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el nuevo valor con el que desea actualizar los nodo siguiente: "));
-           
+            int nodoAnterior = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el nuevo valor con el que desea actualizar los nodo anterior: "));
+            int nodoSiguiente = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el nuevo valor con el que desea actualizar los nodo siguiente: "));
+
             // Actualizar los valores de los nodos anterior y posterior al nodo encontrado
             actual.getAnt().setDato(nodoAnterior);
             actual.getSgt().setDato(nodoSiguiente);
-            
+
             JOptionPane.showMessageDialog(null, "Valores actualizados correctamente.");
         } else {
             JOptionPane.showMessageDialog(null, "El valor no se encontró en la lista.");
         }
     }
 
-    
-    public void ActualizarOrden(){
+    public void ActualizarOrden() {
         int datoBuscado = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor que desea buscar en la lista:"));
-        
+
         if (primero == null) {
             JOptionPane.showMessageDialog(null, "La lista está vacía");
             return;
         }
-        
+
         //Buscar el nodo que contiene el dato
         NodoDC actual = primero;
         boolean encontrado = false;
-        
-        
-        
+
         do {
-            if (actual.getDato()==(datoBuscado)) {
+            if (actual.getDato() == (datoBuscado)) {
                 encontrado = true;
                 break;
             }
             actual = actual.getSgt();
         } while (actual != primero);
-        
+
         if (encontrado) {
-        
-          // NodoDobleCircular temporal = actu
-            
-           
+
+            // NodoDobleCircular temporal = actu
             int datoAnterior = actual.getAnt().getDato();
             int datoSiguiente = actual.getSgt().getDato();
-            
-            if(actual.getDato() < datoSiguiente){  
-                int temporal = actual.getDato(); 
+
+            if (actual.getDato() < datoSiguiente) {
+                int temporal = actual.getDato();
                 actual.setDato(datoSiguiente);
                 actual.getSgt().setDato(temporal);
-                
+
             }
-            
-            if(actual.getDato()<datoAnterior){
+
+            if (actual.getDato() < datoAnterior) {
                 int temporal = actual.getDato();
                 actual.setDato(datoAnterior);
                 actual.getAnt().setDato(temporal);
             }
-            
+
             JOptionPane.showMessageDialog(null, "Valores actualizados correctamente.");
         } else {
             JOptionPane.showMessageDialog(null, "El valor no se encontró en la lista.");
         }
-        
+
     }
-    
-    
+
+    public void buscarDato() {
+        int datoBuscado = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor que desea buscar en la lista:"));
+
+        if (primero == null) {
+            JOptionPane.showMessageDialog(null, "La lista está vacía");
+            return;
+        }
+
+        //Buscar el nodo que contiene el dato
+        NodoDC actual = primero;
+        boolean encontrado = false;
+
+        do {
+            if (actual.getDato() == (datoBuscado)) {
+                encontrado = true;
+                break;
+            }
+            actual = actual.getSgt();
+        } while (actual != primero);
+
+        if (encontrado) {
+            JOptionPane.showMessageDialog(null, "El dato se encuentra en la lista! ");
+        } else {
+            JOptionPane.showMessageDialog(null, "El dato No se encuentra en la lista! ");
+        }
+
+        if (encontrado) {
+            showNodoSiguienteYAnterior(datoBuscado);
+        }
+
+    }
+
+    public void showNodoSiguienteYAnterior(int datoBuscado) {
+
+        //Buscar el nodo que contiene el dato
+        NodoDC actual = primero;
+        boolean encontrado = false;
+        int contadorDeDato = 0;
+        
+        
+        int dato = 0;
+        do {
+            if (actual.getDato() == (datoBuscado)) {
+                dato = actual.getDato();
+                encontrado = true;
+                contadorDeDato++;
+            }
+            actual = actual.getSgt();
+        } while (actual != primero);
+
+        int datoAnterior = actual.getAnt().getDato();
+        int datoSiguiente = actual.getSgt().getDato();
+
+        
+
+    }
+
 }
