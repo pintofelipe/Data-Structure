@@ -30,8 +30,11 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="99" max="32767" attributes="0"/>
-              <Component id="jbInputWord" min="-2" pref="205" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jbInputWord" alignment="1" min="-2" pref="205" max="-2" attributes="0"/>
+                  <Component id="jbInputWord1" alignment="1" min="-2" pref="205" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="96" pref="96" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -42,7 +45,9 @@
               <Component id="jlTitleApp" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Component id="jbInputWord" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="163" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+              <Component id="jbInputWord1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="79" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -69,6 +74,17 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Telefono Roto"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbInputWord1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingresar palabra"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbInputWord1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

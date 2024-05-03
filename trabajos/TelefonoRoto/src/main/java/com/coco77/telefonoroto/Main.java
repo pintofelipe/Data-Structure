@@ -6,6 +6,7 @@ package com.coco77.telefonoroto;
 public class Main extends javax.swing.JFrame {
 
     Telefono telefono = new Telefono();
+    Telefono2 telefono2 = new Telefono2();
     public Main() {
         initComponents();
     }
@@ -21,6 +22,7 @@ public class Main extends javax.swing.JFrame {
 
         jbInputWord = new javax.swing.JButton();
         jlTitleApp = new javax.swing.JLabel();
+        jbInputWord1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -36,6 +38,14 @@ public class Main extends javax.swing.JFrame {
         jlTitleApp.setForeground(new java.awt.Color(102, 102, 255));
         jlTitleApp.setText("Telefono Roto");
 
+        jbInputWord1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jbInputWord1.setText("Ingresar palabra");
+        jbInputWord1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbInputWord1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -46,7 +56,9 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(99, Short.MAX_VALUE)
-                .addComponent(jbInputWord, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbInputWord, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbInputWord1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(96, 96, 96))
         );
         layout.setVerticalGroup(
@@ -56,7 +68,9 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jlTitleApp)
                 .addGap(52, 52, 52)
                 .addComponent(jbInputWord)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(jbInputWord1)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
@@ -65,6 +79,10 @@ public class Main extends javax.swing.JFrame {
     private void jbInputWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInputWordActionPerformed
         telefono.validarInformacion();
     }//GEN-LAST:event_jbInputWordActionPerformed
+
+    private void jbInputWord1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInputWord1ActionPerformed
+        telefono2.inputInformation();
+    }//GEN-LAST:event_jbInputWord1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,6 +121,7 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jbInputWord;
+    private javax.swing.JButton jbInputWord1;
     private javax.swing.JLabel jlTitleApp;
     // End of variables declaration//GEN-END:variables
 }
