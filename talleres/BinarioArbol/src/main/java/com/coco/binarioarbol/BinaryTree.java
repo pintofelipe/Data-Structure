@@ -17,15 +17,15 @@ public class BinaryTree {
     }
 
     // Recursividad
-    TreeNode insertRec(TreeNode root, String value) {
+    TreeNode insertRec(TreeNode root, String name) {
         if (root == null) {
-            root = new TreeNode(value);
+            root = new TreeNode(name);
             return root;
         }
-        if (value.compareTo(root.name) <= 0) {  // Permitir duplicados a la izquierda
-            root.left = insertRec(root.left, value);
+        if (name.compareTo(root.name) <= 0) {  // Permitir duplicados a la izquierda
+            root.left = insertRec(root.left, name);
         } else {
-            root.right = insertRec(root.right, value);
+            root.right = insertRec(root.right, name);
         }
         return root;
     }
