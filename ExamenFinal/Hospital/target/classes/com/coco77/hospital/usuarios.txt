@@ -1,0 +1,10 @@
+10490195520,Natural,Juan Perez,juan.perez@example.com,3001234567,25,3
+10490195521,Jurídica,Empresa XYZ,contacto@xyz.com,3019876543,0,5
+10490195522,Natural,Ana Gomez,ana.gomez@example.com,3021234567,30,2
+10490195523,Natural,Luis Martinez,luis.martinez@example.com,3031234567,40,4
+10490195524,Natural,Maria Lopez,maria.lopez@example.com,3041234567,35,3
+10490195525,Jurídica,Corp ABC,info@corpabc.com,3051234567,0,5
+10490195526,Natural,Carlos Ruiz,carlos.ruiz@example.com,3061234567,45,2
+10490195527,Natural,Sofia Torres,sofia.torres@example.com,3071234567,28,1
+10490195528,Natural,Pedro Ramirez,pedro.ramirez@example.com,3081234567,50,4
+10490195529,Jurídica,Servicios LM,contacto@slm.com,3091234567,0,3

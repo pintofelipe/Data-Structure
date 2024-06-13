@@ -6,12 +6,14 @@ import java.util.*;
 
 public class Hospital {
     private static List<Usuario> usuarios = new ArrayList<>();
+    private static ArbolBinarioBusqueda abb = new ArbolBinarioBusqueda();
 
     public static void main(String[] args) {
         // Ajusta la ruta según tu sistema
-        String rutaArchivo = "C:\\Users\\andre\\OneDrive\\Documents\\NetBeansProjects\\Hospital\\src\\main\\java\\com\\coco77\\hospital\\usuarios.txt"; 
+        String rutaArchivo = "C:\\Users\\57312\\Downloads\\Data-Structure\\ExamenFinal\\Hospital\\target\\classes\\com\\coco77\\hospital\\usuarios.txt"; 
         cargarDatosDesdeArchivo(rutaArchivo);
         mostrarUsuarios();
+        imprimirArbol();
     }
 
     private static void cargarDatosDesdeArchivo(String nombreArchivo) {
@@ -54,5 +56,11 @@ public class Hospital {
             System.out.println("Estrato: " + usuario.estrato);
             System.out.println("-----------------------");
         }
+    }
+    
+    
+     private static void imprimirArbol() {
+        System.out.println("Árbol binario ordenado por edad (de mayor a menor):");
+        abb.imprimirArbolDescendente();
     }
 }

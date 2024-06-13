@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jbDiaMasVisitadoEstadio" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jbTotalDePersonas" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbPromedioDeVisitas" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jBEscenarioMasYMenosVisitadoDia" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbDiaMasVisitado" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbEscenariosMasVisitados" max="32767" attributes="0"/>
+                  <Component id="jbEscenarioMenosVisitado" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jbHombresYmujeres" max="32767" attributes="0"/>
+                  <Component id="jbConsultarEscenario" pref="225" max="32767" attributes="0"/>
+                  <Component id="jbComprarEntrada" pref="225" max="32767" attributes="0"/>
+                  <Component id="jbconsultarEntradas" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbEntradasCompradasPorPersona" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jbAdultosMayores" max="32767" attributes="0"/>
+                  <Component id="jbMasMujeres" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
+              <Component id="jlTitle" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="206" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="jlTitle" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbEscenariosMasVisitados" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbConsultarEscenario" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbDiaMasVisitadoEstadio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbComprarEntrada" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbconsultarEntradas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbEscenarioMenosVisitado" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbTotalDePersonas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbEntradasCompradasPorPersona" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbPromedioDeVisitas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbAdultosMayores" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbDiaMasVisitado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbHombresYmujeres" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jBEscenarioMasYMenosVisitadoDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbMasMujeres" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="66" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="jbEscenariosMasVisitados">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Escenario m&#xe1;s visitado"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbEscenariosMasVisitadosActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlTitle">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="24" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="66" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Escenarios visitados en Oca&#xf1;a"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbDiaMasVisitado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dia m&#xe1;s  y menos visitado"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbDiaMasVisitadoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbEscenarioMenosVisitado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Escenario menos visitado"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbEscenarioMenosVisitadoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbTotalDePersonas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total de personas "/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbTotalDePersonasActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbPromedioDeVisitas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Promedio de visitas"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbPromedioDeVisitasActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbDiaMasVisitadoEstadio">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dia m&#xe1;s visitado el estadio"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbDiaMasVisitadoEstadioActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBEscenarioMasYMenosVisitadoDia">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dia de la semana y escenario + y - visitado"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBEscenarioMasYMenosVisitadoDiaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbComprarEntrada">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Comprar entrada"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbComprarEntradaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbConsultarEscenario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Consultar escenario"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbConsultarEscenarioActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbconsultarEntradas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Consultar entradas"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbconsultarEntradasActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbEntradasCompradasPorPersona">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="# Entradas compradas"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbEntradasCompradasPorPersonaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbAdultosMayores">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adultos mayores"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAdultosMayoresActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbHombresYmujeres">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hombres y mujeres"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbHombresYmujeresActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbMasMujeres">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M&#xe1;s mujeres"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbMasMujeresActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
